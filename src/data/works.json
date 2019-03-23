@@ -1,0 +1,62 @@
+{
+  "title":"Work stories",
+  "description":"",
+  "works":[
+    {
+      "title":"bookoo.gr",
+      "id":0,
+      "img":"bookoo.gif",
+      "subtitle":"Self-Publishing Services",
+      "localtion":"Greece"
+    },
+    {
+      "title":"zurich.impacthub.ch",
+      "id":1,
+      "img":"ihz.png",
+      "subtitle":"Coworking Space",
+      "localtion":"Zurich, Switzerland"
+    },
+    {
+      "title":"dearride.com",
+      "id":2,
+      "img":"dearride.png",
+      "subtitle":"Crafted Surfboards",
+      "localtion":"Los Angeles, USA"
+    },
+    {
+      "title":"visitkythera.com",
+      "id":3,
+      "img":"vk.png",
+      "subtitle":"Tourism Portal",
+      "localtion":"Kythera, Greece"
+    },
+    {
+      "title":"GoGetnotary.com",
+      "id":4,
+      "img":"gogetnotary.png",
+      "subtitle":"Notary Directory",
+      "localtion":"USA"
+    },
+    {
+      "title":"MyJoom.com",
+      "id":5,
+      "img":"myjoom.png",
+      "subtitle":"Joomla Extensions",
+      "localtion":"Switzerland / Global"
+    },
+    {
+      "title":"Essexpass.com",
+      "id":6,
+      "img":"essexpass.svg",
+      "subtitle":"Local Deals Directory",
+      "localtion":"Essex, UK"
+    },
+    {
+      "title":"HappyLandnew.ch",
+      "id":7,
+      "img":"happyland.png",
+      "subtitle":"Amusement Park",
+      "localtion":"Valais, Switzerland"
+    }
+  ]
+}

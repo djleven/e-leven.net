@@ -1,5 +1,21 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <slider
+        :siteData="siteData"
+      >
+      </slider>
 </template>
+
+<script>
+import siteData from '../data/works.json'
+import Slider from '../components/Slider.vue'
+
+export default {
+  name: 'HelloWorld',
+  components: { Slider },
+  data () {
+    return {
+      siteData: siteData
+    }
+  }
+}
+</script>

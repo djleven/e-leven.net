@@ -1,5 +1,5 @@
 {
-  "name": "vue-leven.net",
+  "name": "e-leven.net",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "min": "https://github.com/owenversteeg/min.git",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",
-    "vue-carousel-3d": "^0.1.23",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

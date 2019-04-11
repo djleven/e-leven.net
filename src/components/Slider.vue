@@ -1,8 +1,8 @@
 <template>
-  <carousel-3d
+  <div
     class="no-shadow ex--center-mode"
   >
-    <slide
+    <div
       v-for="(work, index) in works"
       :key="index"
       :perspective="180" :controls-visible="true" :width="600" :display="1"
@@ -20,8 +20,8 @@
           </a>
         </figcaption>
       </figure>
-    </slide>
-  </carousel-3d>
+    </div>
+  </div>
         <!-- /slider-->
 
         <!--<transition name=slide-fade">-->
@@ -89,17 +89,11 @@
 </style>
 
 <script>
-
-import { Carousel3d, Slide } from 'vue-carousel-3d'
-
 export default {
   props: {
     siteData: Object
   },
-  components: {
-    Carousel3d,
-    Slide
-  },
+
   data () {
     return {
       openContent: false,
@@ -120,5 +114,4 @@ export default {
     }
   }
 }
-
 </script>

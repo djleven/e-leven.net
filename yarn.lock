@@ -6342,6 +6342,10 @@ mimic-fn@^2.0.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.0.0.tgz#0913ff0b121db44ef5848242c38bbb35d44cabde"
   integrity sha512-jbex9Yd/3lmICXwYT6gA/j2mNQGU48wCh/VzRd+/Y/PjYQtlg1gLMdZqvu9s/xH7qKvngxRObl56XZR609IMbA==
 
+"min@https://github.com/owenversteeg/min.git":
+  version "0.0.0"
+  resolved "https://github.com/owenversteeg/min.git#5a3cea749f74e720b5101323493e1c73955331b9"
+
 mini-css-extract-plugin@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.5.0.tgz#ac0059b02b9692515a637115b0cc9fed3a35c7b0"
@@ -9438,11 +9442,6 @@ vm-browserify@0.0.4:
   integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
   dependencies:
     indexof "0.0.1"
-
-vue-carousel-3d@^0.1.23:
-  version "0.1.23"
-  resolved "https://registry.yarnpkg.com/vue-carousel-3d/-/vue-carousel-3d-0.1.23.tgz#c62749fd8565cd6c86bd60156ba79784dc0494d3"
-  integrity sha512-jmWOoZtTOd2V0ZXwgcZLQX3IJX/7iC897rDga1L3jMjkzAj+/CcgeezTZcynvkT9QG5BZaU+L1OCGTs5qn4+lQ==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"

@@ -21,9 +21,15 @@
 
 <script>
 import SectionComponent from '@/components/Section.vue'
+import { SECTION_CLASSES } from '../utils/constants'
 
 export default {
   components: { SectionComponent },
+  data () {
+    return {
+      link: SECTION_CLASSES.intro
+    }
+  },
   computed: {
     fromTop () {
       return `top:${this.$store.getters.getHeight / 3}px`
@@ -36,7 +42,7 @@ export default {
   #intro.intro {
     width:100%;
     position:relative;
-    background: url(../assets/images/e-leven_bg.jpg) no-repeat top center;
+    background: url(../assets/images/bg/e-leven_bg.jpg) no-repeat top center;
     background-size: cover;
 
     .heading {
@@ -45,9 +51,8 @@ export default {
     }
     .heading h2 {
       color: #FFF;
-      text-shadow: none;
-      font-size: 60px;
-      line-height: 60px;
+      font-size: 3.8rem;
+      line-height: 3.8rem;
       font-weight: 700;
       background-color: rgba(0, 0, 0, 0);
       text-decoration: none;

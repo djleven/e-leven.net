@@ -1,46 +1,35 @@
 <template>
   <section-component
     sectionId="contact "
-    heading="true"
-    height="0.75"
+    :heading="true"
+    :height="0.8"
     title="get in touch"
     class="contact">
 
     <template v-slot:content>
-      <div class="container"  :style="fromTop">
-        <div class="half lefty">
-          <div class="box">
+      <div style="clear:both"></div>
+      <div class="container height-padding">
+        <div class="row">
+          <div class="col c6 right">
             Montréal <img :src="imagePath('qu.png')" />
-            <br>
-            <phone>(+1)514-360-6149</phone>
+            <p>(+1)514-360-6149</p>
           </div>
-          <div class="box">
-            Toronto <img :src="imagePath('ca.png')" />
-            <br>
-            <phone>(+1)555-360-6149</phone>
-          </div>
-        </div>
+          <div class="col c6 left">
 
-        <div class="half">
-          <div class="box">
             <img :src="imagePath('gr.png')" /> Athens
-            <br>
-            <phone>(+30)210-300-6149</phone>
+            <p>(+30)210-300-6149</p>
           </div>
-          <div class="box">
+          <div class="col c6 right hidden-xsh">
+            Toronto <img :src="imagePath('ca.png')" />
+            <p>(+1)555-360-6149</p>
+
+          </div>
+          <div class="col c6 left hidden-xsh">
             <img :src="imagePath('us.png')" /> Miami
-            <br>
-            <phone>(+1)304-560-6149</phone>
+            <p>(+1)304-560-6149</p>
           </div>
         </div>
-
-
         <div class="centered bottom-pad">
-          <!--<h5>Web
-          </h5>-->
-
-          <!--<h5>Email
-          </h5>-->
           <a class="email" href="mailto:#">info@e-leven.net
           </a>
           <div class="social">
@@ -77,32 +66,15 @@ import SectionComponent from '@/components/Section.vue'
 
 export default {
   components: { SectionComponent },
-  computed: {
-    fromTop () {
-      return `margin-top:${this.$store.getters.getHeight / 3}px`
-    }
-  },
   methods: {
     imagePath (file) {
-      return require('../assets/' + file)
+      return require(`../assets/images/flags/${file}`)
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-  .container {
-    /*font-family: 'Kaushan Script', cursive;*/
-    font-style: normal;
-  }
-  .half {
-    width:50%;
-    float:left;
-    padding: 0 5px;
-  }
-  .lefty {
-    text-align: right;
-  }
 
   li{
     display: inline-block;
@@ -135,5 +107,11 @@ export default {
   .social-google a:hover, .social-github a:hover{background: #333;}
   .box img {
     display:none;
+  }
+  .right {text-align: right;}
+  .left {text-align: left;}
+  .c6 {
+    width: 50%!important;
+    padding: 0 10px;
   }
 </style>

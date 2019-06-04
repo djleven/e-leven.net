@@ -1,0 +1,78 @@
+{
+  "title":"Favorites",
+  "description":"",
+  "class": "about",
+  "works":[
+    {
+      "title":"Favorite Spaghetti",
+      "name": "spaghetti",
+      "color": "white",
+      "background": "#353531",
+      "img":"fa fa-cheese",
+      "subtitle":"Fettuccini",
+      "location":"Runner-up: Javascript",
+      "url": ""
+    },
+    {
+      "title":"Fave JS Flavor",
+      "name": "flavor",
+      "color": "white",
+      "background": "#42b883",
+      "img":"fab fa-vuejs",
+      "subtitle":"VueJS love",
+      "location":"Runner-up: Vanilla",
+      "url": "bookoo.gr"
+    },
+    {
+      "title":"Favorite Pastime",
+      "name": "programming",
+      "color": "white",
+      "background": "#003B36",
+      "img":"fas fa-laptop-code",
+      "subtitle":"Programming",
+      "location":"Runner up: ",
+      "url": "MyJoom.com"
+    },
+    {
+      "title":"Past Favorite Pastime",
+      "name": "pop-tunes-composition",
+      "color": "#E8820C",
+      "background": "#012622",
+      "img":"fas fa-guitar",
+      "subtitle":"Pop Song Composition",
+      "location":"Runner up: ",
+      "url": "MyJoom.com"
+    },
+    {
+      "title":"Favorite Sport",
+      "name": "visitkythera",
+      "color": "white",
+      "background": "#4AAD52",
+      "img":"fas fa-futbol",
+      "subtitle":"locale.UnitsOfMeasurement.includes('foot') ? Soccer : Football",
+      "location":"Runner up: Backgammon",
+      "url": "visitkythera.com"
+    },
+    {
+      "title":"CitizenShips",
+      "name": "citizen-ships",
+      "color": "white",
+      "background": "rgb(0, 52, 89)",
+      "bg": "#21ba45",
+      "img":"fas fa-flag",
+      "subtitle":"Greece, Quebec, Canada, European Union",
+      "location":"Pending: United Federation of Planets",
+      "url": "https://memory-alpha.fandom.com/wiki/United_Federation_of_Planets"
+    },
+    {
+      "title":"My Vote for PrimeMinister",
+      "name": "prime-minister",
+      "color": "white",
+      "background": "#333",
+      "img":"fa fa-person-booth",
+      "subtitle":"Jean-Luc Picard",
+      "location":"Runner-up: Jean-Luc Picard",
+      "url": "mymoviedatabase.cinema.ttic.ca"
+    }
+  ]
+}

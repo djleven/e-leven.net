@@ -1,62 +1,78 @@
 {
   "title":"Work stories",
   "description":"",
+  "class": "work",
   "works":[
     {
+      "title":"Oikis",
+      "name": "oikis",
+      "color": "white",
+      "background": "#74b49b",
+      "bg": "#21ba45",
+      "img":"oikis.png",
+      "subtitle":"Building legalisation management application",
+      "location":"Greece",
+      "url": "oikis.ttic.ca"
+    },
+    {
+      "title":"My Movie Database",
+      "name": "my-movie-database",
+      "color": "#333",
+      "background": "yellow",
+      "img":"mmdb.png",
+      "subtitle":"Wordpress plugin",
+      "location":"Wordpress plugin",
+      "url": "mymoviedatabase.cinema.ttic.ca"
+    },
+    {
       "title":"bookoo.gr",
-      "id":0,
+      "name": "bookoo",
+      "color": "white",
+      "background": "#333333",
       "img":"bookoo.gif",
       "subtitle":"Self-Publishing Services",
-      "localtion":"Greece"
+      "location":"Greece",
+      "url": "bookoo.gr"
     },
     {
       "title":"zurich.impacthub.ch",
-      "id":1,
+      "name": "impacthub",
+      "color": "",
+      "background": "white",
       "img":"ihz.png",
       "subtitle":"Coworking Space",
-      "localtion":"Zurich, Switzerland"
-    },
-    {
-      "title":"dearride.com",
-      "id":2,
-      "img":"dearride.png",
-      "subtitle":"Crafted Surfboards",
-      "localtion":"Los Angeles, USA"
-    },
-    {
-      "title":"visitkythera.com",
-      "id":3,
-      "img":"vk.png",
-      "subtitle":"Tourism Portal",
-      "localtion":"Kythera, Greece"
-    },
-    {
-      "title":"GoGetnotary.com",
-      "id":4,
-      "img":"gogetnotary.png",
-      "subtitle":"Notary Directory",
-      "localtion":"USA"
+      "location":"Zurich, Switzerland",
+      "url": "zurich.impacthub.ch"
     },
     {
       "title":"MyJoom.com",
-      "id":5,
+      "name": "myjooom",
+      "color": "white",
+      "background": "#5091da",
       "img":"myjoom.png",
       "subtitle":"Joomla Extensions",
-      "localtion":"Switzerland / Global"
+      "location":"Switzerland / Global",
+      "url": "MyJoom.com"
     },
     {
-      "title":"Essexpass.com",
-      "id":6,
-      "img":"essexpass.svg",
-      "subtitle":"Local Deals Directory",
-      "localtion":"Essex, UK"
+      "title":"visitkythera.com",
+      "name": "visitkythera",
+      "color": "white",
+      "background": "#4AAD52",
+      "img":"vk.png",
+      "subtitle":"Tourism Portal",
+      "location":"Kythera, Greece",
+      "url": "visitkythera.com"
     },
     {
-      "title":"HappyLandnew.ch",
-      "id":7,
-      "img":"happyland.png",
-      "subtitle":"Amusement Park",
-      "localtion":"Valais, Switzerland"
+      "title":"dearride.com",
+      "name": "dearride",
+      "color": "white",
+      "background": "#003459",
+      "img":"dearride.png",
+      "subtitle":"Crafted Surfboards",
+      "location":"Los Angeles, USA",
+      "url": "dearride.com"
     }
   ]
 }

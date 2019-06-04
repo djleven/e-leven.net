@@ -1,60 +1,70 @@
 <template>
-  <div class="home">
-    <MainNavigation/>
-    <Intro/>
-    <Work/>
-    <Contact/>
-    <footer-component/>
-  </div>
+  <Jadzia
+    :pageClass="data.class"
+    :menuItems="menuItems">
+    <template v-slot:leading>
+      <Intro/>
+    </template>
+    <template v-slot:content>
+      <works
+        v-for="(work, index) in data.works"
+        :section="work"
+        :key="index"
+        :class="data.class">
+      </works>
+    </template>
+    <template v-slot:trailing>
+      <Contact/>
+      <footer-component/>
+    </template>
+  </Jadzia>
 </template>
 
 <script>
-import MainNavigation from '@/components/TopNavbar.vue'
+import Jadzia from '@/layouts/Jadzia.vue'
 import Intro from '@/components/Intro.vue'
-import Work from '@/components/Work.vue'
+import Works from '@/components/Works.vue'
 import Contact from '@/components/Contact.vue'
 import FooterComponent from '@/components/Footer.vue'
+import { SECTION_CLASSES } from '../utils/constants'
 
 export default {
-  components: { MainNavigation, Intro, Work, Contact, FooterComponent },
+  components: { Jadzia, Intro, Contact, Works, FooterComponent },
+  mounted () {
+    this.$store.commit('setScrollItems', Array.from(this.itemData, x => x.name))
+  },
   computed: {
-    height () {
-      return this.$store.getters.getHeight
+    menuItems () {
+      return [
+        {
+          name: 'Home',
+          url: SECTION_CLASSES.intro,
+          sectionNumber: [0]
+        },
+        {
+          name: 'Work',
+          url: SECTION_CLASSES.work,
+          sectionNumber:
+              Array.from(this.itemData, x => this.itemData.indexOf(x) + 1)
+        },
+        {
+          name: 'About',
+          url: '/about',
+          sectionNumber: []
+        },
+        {
+          name: 'Contact',
+          url: SECTION_CLASSES.contact,
+          sectionNumber: [(this.itemData.length + 1)]
+        }
+      ]
     },
-    width () {
-      return this.$store.getters.getWidth
+    data () {
+      return this.$store.state.works
+    },
+    itemData () {
+      return this.data.works
     }
   }
 }
 </script>
-
-<style lang="scss">
-  .page-scroll {
-    text-align: center;
-  }
-  .btn-circle {
-    width: 70px;
-    height: 70px;
-    margin-top: 15px;
-    padding: 11px 20px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    font-size: 20px;
-    color: #fff;
-    background: 0 0;
-    -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
-  }
-  .btn-circle:hover,
-  .btn-circle:focus {
-    outline: 0;
-    color: #fff;
-    background: rgba(255,255,255,.1);
-  }
-  .centered {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-</style>

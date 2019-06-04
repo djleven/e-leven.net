@@ -12,56 +12,32 @@
           v-for="(menuItem, index) in menuItems"
           :key="index"
           :class="menuItemClass(index)"
-          @click="setActive(index)">
-          <a :href="menuItem.url" class="nav-links">
+          @click="goTo(index)">
+          <a class="nav-links">
             {{ menuItem.name }}
           </a>
         </li>
       </ul>
     </div>
-    <!--<router-link to="/">Home</router-link> |-->
-    <!--<router-link to="/about">About</router-link>-->
   </nav>
 </template>
 
 <script>
-import store from '../store'
 
 export default {
   name: 'MainNavigation',
-  data () {
-    return {
-      active: 0,
-      menuItems: [
-        {
-          name: 'Home',
-          url: '#intro'
-        },
-        {
-          name: 'Work',
-          url: '#work'
-        },
-        {
-          name: 'About',
-          url: '#about'
-        },
-        {
-          name: 'Contact',
-          url: '#contact'
-        }
-      ]
+  props: {
+    menuItems: {
+      type: Array,
+      required: true
     }
   },
-  mounted () {
-    window.addEventListener('scroll', this.handleScroll)
-    this.handleScroll()
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
   computed: {
-    topOffset() {
+    topOffset () {
       return this.$store.getters.getTopOffset
+    },
+    active () {
+      return this.$store.state.window.scroll.active
     }
   },
   watch: {
@@ -74,30 +50,27 @@ export default {
   },
   methods: {
     menuItemClass (index) {
-      if (index === this.active) {
-        return 'menuItem active'
+      if (this.menuItems[index].sectionNumber.includes(this.active)) {
+        return 'active'
       }
-      return 'menuItem'
-    },
-    setActive (index) {
-      this.active = index
     },
     toggleMenu () {
       let navBarToggle = this.$refs.navBarToggle
       navBarToggle.classList.toggle('active')
     },
-    handleScroll () {
-      let element = this.$refs.navbar
-      let bodyRect = document.body.getBoundingClientRect()
-      let elemRect = element.getBoundingClientRect()
-      let offset = elemRect.top - bodyRect.top
-      store.commit('setTopOffset', offset)
+    async goTo (index) {
+      const to = this.menuItems[index].url
+      if (this.menuItems[index].sectionNumber.length) {
+        this.$store.dispatch('scrollPageToFromClick', to)
+      } else {
+        this.$router.push({ path: to })
+      }
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   //$menu-background: linear-gradient(262deg, #E8820C 41%, #A8420A 100%);
   $menu-background: #E8820C;
 
@@ -127,8 +100,10 @@ export default {
     list-style-type: none;
     display: none;
     background-color: rgba(255,255,255,.4);
+    margin:0;
     li {
       text-align: left;
+      margin:0;
     }
     li a {
       font-size: 0.85em;
@@ -157,6 +132,7 @@ export default {
     padding: 1em 2em;
     h1{
       margin:0;
+      font-size: 23px;
     }
   }
 
@@ -173,7 +149,26 @@ export default {
     display: block;
   }
 
-  @media screen and (max-width: 767px) {
+  /* Maximum height */
+  @media (max-height: 399px) {
+    .navbar.top-nav-collapse {
+      background: transparent!important;
+    }
+    .navbar-main-collapse {
+      background: #E8820C;
+    }
+    .navbar-brand, footer .btn-circle {
+      display:none;
+    }
+    .navbar-toggle {
+      color: #E8820C!important;
+    }
+    body {
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 767px), screen and (max-height: 398px)  {
     .collapse.navbar-collapse {
       clear: both;
     }
@@ -185,11 +180,13 @@ export default {
           padding: unset;
           display: inline-block;
           width:100%;
+          color: white;
         }
       }
     }
   }
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 768px) and (min-height: 399px) {
     .navbar {
       justify-content: space-between;
       align-items: center;

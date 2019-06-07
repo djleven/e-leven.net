@@ -1,6 +1,6 @@
 export class WindowProps {
   constructor ({
-    loading = false,
+    loading = true,
     width = 0,
     height = 0,
     offsetTop = 0,

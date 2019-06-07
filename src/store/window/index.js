@@ -17,6 +17,9 @@ const mutations = {
   setScrollItems (state, items) {
     state.scroll.items = items
   },
+  setLoading (state, loading) {
+    state.loading = loading
+  },
   resetWindowProps (state) {
     state = new WindowProps()
   }

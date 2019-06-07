@@ -6,19 +6,23 @@
     <a class="navbar-brand" href="https://e-leven.net">
       <h1>e-leven.net</h1>
     </a>
+
     <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-      <ul class="main-nav" ref="navBarToggle">
-        <li
-          v-for="(menuItem, index) in menuItems"
-          :key="index"
-          :class="menuItemClass(index)"
-          @click="goTo(index)">
-          <a class="nav-links">
-            {{ menuItem.name }}
-          </a>
-        </li>
-      </ul>
+      <transition name="bounce" mode="out-in">
+        <ul v-if="!loading" class="main-nav" ref="navBarToggle">
+          <li
+            v-for="(menuItem, index) in menuItems"
+            :key="index"
+            :class="menuItemClass(index)"
+            @click="goTo(index)">
+            <a class="nav-links">
+              {{ menuItem.name }}
+            </a>
+          </li>
+        </ul>
+      </transition>
     </div>
+
   </nav>
 </template>
 
@@ -32,12 +36,18 @@ export default {
       required: true
     }
   },
+  beforeMount () {
+    this.$store.commit('setLoading', true)
+  },
   computed: {
     topOffset () {
       return this.$store.getters.getTopOffset
     },
     active () {
       return this.$store.state.window.scroll.active
+    },
+    loading () {
+      return this.$store.state.window.loading
     }
   },
   watch: {
@@ -60,10 +70,14 @@ export default {
     },
     async goTo (index) {
       const to = this.menuItems[index].url
-      if (this.menuItems[index].sectionNumber.length) {
-        this.$store.dispatch('scrollPageToFromClick', to)
+      if (this.$store.state.window.scroll.scrollStarted) {
+        setTimeout(() => this.goTo(index), 500)
       } else {
-        this.$router.push({ path: to })
+        if (this.menuItems[index].sectionNumber.length) {
+          this.$store.dispatch('scrollPageToFromClick', to)
+        } else {
+          this.$router.push({ path: to })
+        }
       }
     }
   }

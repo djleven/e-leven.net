@@ -1,22 +1,26 @@
 <template>
-    <section-component
-      sectionId="intro"
-      :height="1"
-      class="intro">
+  <section-component
+    sectionId="intro"
+    :height="1"
+    class="intro">
 
-      <template v-slot:content>
-        <div class="heading centered" :style="fromTop">
-          <h2>e-leven.net</h2>
-          <h4 class="upper">Creative web development</h4>
-          <div class="page-scroll">
-            <a href="#work" class="btn btn-circle">
+    <template v-slot:content>
+      <div class="heading centered" :style="fromTop">
+        <h2>e-leven.net</h2>
+        <h4 class="upper">Creative web development</h4>
+
+        <div class="page-scroll">
+          <transition name="bounce" mode="out-in">
+            <a v-if="!loading" class="btn btn-circle" @click="scrollDown">
               <i class="fa fa-angle-double-down animated">
               </i>
             </a>
-          </div>
+          </transition>
         </div>
-      </template>
-    </section-component>
+
+      </div>
+    </template>
+  </section-component>
 </template>
 
 <script>
@@ -33,6 +37,14 @@ export default {
   computed: {
     fromTop () {
       return `top:${this.$store.getters.getHeight / 3}px`
+    },
+    loading () {
+      return this.$store.state.window.loading
+    }
+  },
+  methods: {
+    scrollDown () {
+      window.scrollBy(0, 50)
     }
   }
 }

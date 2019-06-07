@@ -120,6 +120,9 @@ section.contact {
 .page-scroll {
     text-align: center;
 }
+.intro .page-scroll {
+    height: 67px;
+}
 
 .btn-circle {
     width: 50px;
@@ -183,9 +186,24 @@ section.contact {
 }
 
 .fade-enter,
-.fade-leave-to
-    /* .fade-leave-active in <2.1.8 */
-
-{
+.fade-leave-to {
     opacity: 0
+}
+
+.bounce-enter-active {
+    animation: bounce-in .5s;
+}
+.bounce-leave-active {
+    animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

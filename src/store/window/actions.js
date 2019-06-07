@@ -62,6 +62,7 @@ const actions = {
         scrollStarted: false,
         lastScrollTop: offset
       })
+      commit('setLoading', false)
       document.body.style.overflowY = 'scroll'
     } catch (err) {
       console.log(err)
@@ -81,21 +82,18 @@ const actions = {
     return active
   },
   scrollPageToFromClick ({ state, commit, dispatch }, to) {
-    if (state.scroll.scrollStarted) {
-      // setTimeout(() => dispatch('scrollPageToFromClick', to, 500))
-    } else {
-      commit('setScroll', {
-        active: null
-      })
-      dispatch(
-        'scrollPageTo',
-        {
-          to: to,
-          duration: 2000
-        }
-      )
-    }
+    commit('setScroll', {
+      active: null
+    })
+    dispatch(
+      'scrollPageTo',
+      {
+        to: to,
+        duration: 2000
+      }
+    )
   }
+
 }
 
 export default actions

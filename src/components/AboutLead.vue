@@ -9,10 +9,12 @@
         <h2>e-leven.net</h2>
         <h4 class="upper">Creative web development</h4>
         <div class="page-scroll">
-          <a href="#work" class="btn btn-circle">
-            <i class="fa fa-angle-double-down animated">
-            </i>
-          </a>
+          <transition name="bounce" mode="out-in">
+            <a v-if="!loading" class="btn btn-circle" @click="scrollDown">
+              <i class="fa fa-angle-double-down animated">
+              </i>
+            </a>
+          </transition>
         </div>
       </div>
     </template>
@@ -33,6 +35,14 @@ export default {
   computed: {
     fromTop () {
       return `top:${this.$store.getters.getHeight / 3}px`
+    },
+    loading () {
+      return this.$store.state.window.loading
+    }
+  },
+  methods: {
+    scrollDown () {
+      window.scrollBy(0, 50)
     }
   }
 }

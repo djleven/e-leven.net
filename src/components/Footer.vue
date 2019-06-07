@@ -7,16 +7,14 @@
     <template v-slot:content>
       <footer>
         <div class="container">
-          <div class="wow shake" data-wow-delay="0.4s">
-            <div class="page-scroll hidden-xsh">
-              <a href="#intro" class="btn btn-circle">
-                <i class="fa fa-angle-double-up animated">
-                </i>
-              </a>
-            </div>
-            <div class="copyright">
-              © 2019 e-leven.net
-            </div>
+          <div class="page-scroll hidden-xsh">
+            <a class="btn btn-circle" @click="scrollToTop">
+              <i class="fa fa-angle-double-up animated">
+              </i>
+            </a>
+          </div>
+          <div class="copyright">
+            © 2019 e-leven.net
           </div>
         </div>
       </footer>
@@ -28,7 +26,12 @@
 import SectionComponent from '@/components/Section.vue'
 
 export default {
-  components: { SectionComponent }
+  components: { SectionComponent },
+  methods: {
+    scrollToTop () {
+      this.$store.dispatch('scrollPageToFromClick', 0)
+    }
+  }
 }
 </script>
 

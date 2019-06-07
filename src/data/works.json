@@ -18,7 +18,7 @@
       "title":"My Movie Database",
       "name": "my-movie-database",
       "color": "#333",
-      "background": "yellow",
+      "background": "#FFFF33",
       "img":"mmdb.png",
       "subtitle":"Wordpress plugin",
       "location":"Wordpress plugin",

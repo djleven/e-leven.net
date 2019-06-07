@@ -70,9 +70,7 @@ export default {
     },
     async goTo (index) {
       const to = this.menuItems[index].url
-      if (this.$store.state.window.scroll.scrollStarted) {
-        setTimeout(() => this.goTo(index), 500)
-      } else {
+      if (!this.$store.state.window.scroll.scrollStarted) {
         if (this.menuItems[index].sectionNumber.length) {
           this.$store.dispatch('scrollPageToFromClick', to)
         } else {

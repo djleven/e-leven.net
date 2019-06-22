@@ -4,6 +4,16 @@
   "class": "work",
   "works":[
     {
+      "title":"Reicast DB",
+      "name": "reicastdb",
+      "color": "white",
+      "background": "#32213A",
+      "img":"reicast.png",
+      "subtitle":"Reicast Game Compatibility Database",
+      "location":"Global",
+      "url": "gamedb.reicast.com"
+    },
+    {
       "title":"Oikis",
       "name": "oikis",
       "color": "white",

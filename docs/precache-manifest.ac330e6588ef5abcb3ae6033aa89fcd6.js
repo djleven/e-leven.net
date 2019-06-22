@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "/fonts/fa-regular-400.7599ecd0.ttf"
   },
   {
-    "revision": "24a77b8baa5b34fb50814225fae0272d",
-    "url": "/fonts/fa-brands-400.24a77b8b.woff2"
-  },
-  {
     "revision": "fb4ea3247aace8c1c8bcf904772a91c7",
     "url": "/fonts/fa-solid-900.fb4ea324.woff2"
+  },
+  {
+    "revision": "24a77b8baa5b34fb50814225fae0272d",
+    "url": "/fonts/fa-brands-400.24a77b8b.woff2"
   },
   {
     "revision": "175ef492f87a05e2ce45cb701d62c450",
@@ -72,8 +72,8 @@ self.__precacheManifest = [
     "url": "/fonts/fa-solid-900.cb45ce03.eot"
   },
   {
-    "revision": "8e62e30aba17c7ea8465",
-    "url": "/js/app.5279c209.js"
+    "revision": "a7dbdf3de19d3c7d0dda",
+    "url": "/js/app.26cb7af2.js"
   },
   {
     "revision": "37155379ef7eee0fab0d",
@@ -140,11 +140,11 @@ self.__precacheManifest = [
     "url": "/img/e-leven_bg.55f3607c.jpg"
   },
   {
-    "revision": "567727d7fcba71d353a15fdc901889bb",
+    "revision": "9f3915434828976bc932e433d45c8bde",
     "url": "/index.html"
   },
   {
-    "revision": "8e62e30aba17c7ea8465",
+    "revision": "a7dbdf3de19d3c7d0dda",
     "url": "/css/app.2513d552.css"
   }
 ];

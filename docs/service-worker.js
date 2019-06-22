@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.d0d2d10434ddc7e52bee02da2227a8ce.js"
+  "/precache-manifest.ac330e6588ef5abcb3ae6033aa89fcd6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "e-leven.net"});
